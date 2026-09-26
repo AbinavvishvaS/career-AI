@@ -1,0 +1,919 @@
+/* =========================================================
+   CareerPilot AI
+   Main Stylesheet
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   RESET
+   --------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   BODY
+   --------------------------------------------------------- */
+
+body {
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f7fb 0%,
+            #eef3f9 50%,
+            #f8fafc 100%
+        );
+
+    color: #1e293b;
+
+    min-height: 100vh;
+
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   MAIN CONTAINER
+   --------------------------------------------------------- */
+
+.container {
+    width: 92%;
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    padding: 35px 0 50px;
+}
+
+
+/* ---------------------------------------------------------
+   HEADER
+   --------------------------------------------------------- */
+
+.header {
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e3a8a,
+            #2563eb
+        );
+
+    color: white;
+
+    padding: 45px 50px;
+
+    border-radius: 22px;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 15px 40px rgba(15, 23, 42, 0.18);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative circle */
+
+.header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    right: -60px;
+    top: -80px;
+}
+
+
+.header h1 {
+    font-size: 42px;
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 8px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.header p {
+    font-size: 17px;
+
+    color: #dbeafe;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ---------------------------------------------------------
+   CARDS
+   --------------------------------------------------------- */
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+    box-shadow:
+        0 12px 32px rgba(15, 23, 42, 0.09);
+}
+
+
+.card h2 {
+    color: #0f172a;
+
+    font-size: 24px;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+}
+
+
+.description {
+    color: #64748b;
+
+    font-size: 15px;
+
+    margin-bottom: 28px;
+}
+
+
+/* ---------------------------------------------------------
+   FORM
+   --------------------------------------------------------- */
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 650;
+
+    color: #334155;
+
+    margin-bottom: 9px;
+}
+
+
+/* ---------------------------------------------------------
+   SELECT
+   --------------------------------------------------------- */
+
+select {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+select:hover {
+    border-color: #94a3b8;
+}
+
+
+select:focus {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* ---------------------------------------------------------
+   SKILLS GRID
+   --------------------------------------------------------- */
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   SKILL CHECKBOX
+   --------------------------------------------------------- */
+
+.skill-item {
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 10px;
+
+    padding: 12px 14px;
+
+    cursor: pointer;
+
+    font-size: 14px !important;
+
+    font-weight: 500 !important;
+
+    color: #334155 !important;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+
+.skill-item:hover {
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+
+    transform: translateY(-1px);
+}
+
+
+.skill-item input {
+    width: 17px;
+
+    height: 17px;
+
+    accent-color: #2563eb;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* ---------------------------------------------------------
+   PREDICT BUTTON
+   --------------------------------------------------------- */
+
+#predictButton {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 11px;
+
+    padding: 15px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    margin-top: 8px;
+
+    box-shadow:
+        0 8px 18px rgba(37, 99, 235, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+#predictButton:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 24px rgba(37, 99, 235, 0.28);
+}
+
+
+#predictButton:active {
+    transform: translateY(0);
+}
+
+
+#predictButton:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* ---------------------------------------------------------
+   ERROR MESSAGE
+   --------------------------------------------------------- */
+
+.error-message {
+    margin-top: 18px;
+
+    padding: 13px 16px;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    border-left: 4px solid #ef4444;
+
+    border-radius: 9px;
+
+    color: #b91c1c;
+
+    font-size: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   RESULTS
+   --------------------------------------------------------- */
+
+.results-section {
+    animation:
+        fadeIn 0.45s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   CAREER RESULT
+   --------------------------------------------------------- */
+
+.career-card {
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #ffffff
+        );
+
+    border: 1px solid #bfdbfe;
+}
+
+
+.career-card h2 {
+    color: #1e3a8a;
+}
+
+
+.career-result {
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #1d4ed8
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: 750;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.22);
+}
+
+
+/* ---------------------------------------------------------
+   RESULT BLOCKS
+   --------------------------------------------------------- */
+
+.result-block {
+    margin-top: 25px;
+}
+
+
+.result-block h3 {
+    font-size: 16px;
+
+    color: #334155;
+
+    margin-bottom: 12px;
+}
+
+
+/* ---------------------------------------------------------
+   SKILL TAGS
+   --------------------------------------------------------- */
+
+.skills-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    min-height: 25px;
+}
+
+
+.skill-tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    border: 1px solid #bfdbfe;
+
+    color: #1d4ed8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Matched skills */
+
+.skills-list.matched .skill-tag {
+    background: #ecfdf5;
+
+    border-color: #a7f3d0;
+
+    color: #047857;
+}
+
+
+/* Missing skills */
+
+.skills-list.missing .skill-tag {
+    background: #fff7ed;
+
+    border-color: #fed7aa;
+
+    color: #c2410c;
+}
+
+
+/* ---------------------------------------------------------
+   EMPTY MESSAGE
+   --------------------------------------------------------- */
+
+.empty-message {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    font-style: italic;
+}
+
+
+/* ---------------------------------------------------------
+   SKILL GAP
+   --------------------------------------------------------- */
+
+.gap-section {
+    margin-top: 30px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.gap-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    color: #334155;
+
+    font-size: 15px;
+}
+
+
+.gap-header strong {
+    color: #1d4ed8;
+
+    font-size: 18px;
+}
+
+
+/* ---------------------------------------------------------
+   PROGRESS BAR
+   --------------------------------------------------------- */
+
+.progress-container {
+    width: 100%;
+
+    height: 13px;
+
+    background: #e2e8f0;
+
+    border-radius: 50px;
+
+    overflow: hidden;
+}
+
+
+.progress-bar {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #60a5fa
+        );
+
+    border-radius: 50px;
+
+    transition:
+        width 0.8s ease;
+}
+
+
+/* ---------------------------------------------------------
+   RECOMMENDATION HEADER
+   --------------------------------------------------------- */
+
+.recommendation-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+
+.recommendation-header p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    margin-top: 2px;
+}
+
+
+/* ---------------------------------------------------------
+   RECOMMENDATION LIST
+   --------------------------------------------------------- */
+
+.recommendations-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 12px 0 0;
+}
+
+
+/* ---------------------------------------------------------
+   RECOMMENDATION ITEM
+   --------------------------------------------------------- */
+
+.recommendation-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.recommendation-item:last-child {
+    border-bottom: none;
+}
+
+
+/* Arrow circle */
+
+.recommendation-icon {
+    width: 34px;
+
+    height: 34px;
+
+    min-width: 34px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* Recommendation text */
+
+.recommendation-content {
+    flex: 1;
+}
+
+
+.recommendation-content strong {
+    display: block;
+
+    color: #1e293b;
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.recommendation-content p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+}
+
+
+/* Empty recommendations */
+
+.empty-recommendation {
+    padding: 20px 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ---------------------------------------------------------
+   FOOTER
+   --------------------------------------------------------- */
+
+footer {
+    text-align: center;
+
+    margin-top: 30px;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+.synthetic-note {
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    margin-top: 3px;
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE TABLET
+   --------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+    .skills-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .header {
+        padding: 35px;
+    }
+
+
+    .header h1 {
+        font-size: 35px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding-top: 20px;
+    }
+
+
+    .header {
+        padding: 28px 22px;
+
+        border-radius: 17px;
+    }
+
+
+    .header h1 {
+        font-size: 29px;
+    }
+
+
+    .header p {
+        font-size: 14px;
+    }
+
+
+    .card {
+        padding: 22px 18px;
+
+        border-radius: 15px;
+    }
+
+
+    .card h2 {
+        font-size: 21px;
+    }
+
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+
+    .career-result {
+        font-size: 18px;
+
+        padding: 12px 22px;
+    }
+
+
+    .recommendation-item {
+        gap: 10px;
+    }
+
+
+    .recommendation-icon {
+        width: 30px;
+
+        height: 30px;
+
+        min-width: 30px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+   --------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+    .container {
+        width: 96%;
+    }
+
+
+    .card {
+        padding: 18px 14px;
+    }
+
+
+    .header {
+        padding: 24px 18px;
+    }
+
+
+    .header h1 {
+        font-size: 26px;
+    }
+
+}

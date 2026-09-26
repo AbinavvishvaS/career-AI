@@ -1,0 +1,146 @@
+{
+    "ML Engineer": {
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Pandas",
+            "NumPy",
+            "Machine_Learning",
+            "Scikit_Learn",
+            "Git",
+            "Linux"
+        ],
+        "learning_recommendations": [
+            "Learn Python programming and object-oriented programming.",
+            "Practice Pandas and NumPy for data processing.",
+            "Study machine learning algorithms and model evaluation.",
+            "Build classification projects using scikit-learn.",
+            "Learn Git and basic Linux commands."
+        ]
+    },
+
+    "Data Analyst": {
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Pandas",
+            "Excel",
+            "Data_Visualization",
+            "NumPy"
+        ],
+        "learning_recommendations": [
+            "Learn SQL queries and database fundamentals.",
+            "Practice Excel data cleaning and analysis.",
+            "Learn Pandas and NumPy.",
+            "Study data visualization concepts.",
+            "Complete an end-to-end data analysis project."
+        ]
+    },
+
+    "Python Developer": {
+        "required_skills": [
+            "Python",
+            "SQL",
+            "Git",
+            "Linux",
+            "HTML",
+            "JavaScript"
+        ],
+        "learning_recommendations": [
+            "Strengthen Python programming fundamentals.",
+            "Build Python applications.",
+            "Learn SQL and database integration.",
+            "Practice Git and Linux basics.",
+            "Build a Python web application."
+        ]
+    },
+
+    "Java Developer": {
+        "required_skills": [
+            "Java",
+            "SQL",
+            "Git",
+            "Linux",
+            "HTML",
+            "JavaScript"
+        ],
+        "learning_recommendations": [
+            "Learn Java fundamentals and OOP.",
+            "Practice SQL and database connectivity.",
+            "Learn Git and Linux basics.",
+            "Study web development fundamentals.",
+            "Build a Java application."
+        ]
+    },
+
+    "Web Developer": {
+        "required_skills": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Git",
+            "SQL",
+            "Python"
+        ],
+        "learning_recommendations": [
+            "Learn semantic HTML.",
+            "Practice responsive CSS.",
+            "Learn JavaScript and DOM concepts.",
+            "Practice Git and SQL.",
+            "Build a complete responsive web project."
+        ]
+    },
+
+    "Cloud Engineer": {
+        "required_skills": [
+            "Cloud_Computing",
+            "Linux",
+            "Git",
+            "Networking",
+            "Python",
+            "SQL"
+        ],
+        "learning_recommendations": [
+            "Learn cloud computing fundamentals.",
+            "Practice Linux administration.",
+            "Study networking concepts.",
+            "Learn Git and Python scripting.",
+            "Build a small cloud deployment project."
+        ]
+    },
+
+    "Network Engineer": {
+        "required_skills": [
+            "Networking",
+            "Linux",
+            "Cloud_Computing",
+            "Cybersecurity",
+            "Git"
+        ],
+        "learning_recommendations": [
+            "Study networking fundamentals.",
+            "Practice Linux networking commands.",
+            "Learn cloud networking concepts.",
+            "Study basic cybersecurity principles.",
+            "Build a small network configuration lab."
+        ]
+    },
+
+    "Cybersecurity Analyst": {
+        "required_skills": [
+            "Cybersecurity",
+            "Networking",
+            "Linux",
+            "Python",
+            "Cloud_Computing",
+            "Git"
+        ],
+        "learning_recommendations": [
+            "Learn cybersecurity fundamentals.",
+            "Study networking protocols.",
+            "Practice Linux security commands.",
+            "Learn basic Python scripting.",
+            "Study cloud security concepts."
+        ]
+    }
+}

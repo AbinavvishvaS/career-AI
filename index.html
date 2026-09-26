@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CareerPilot AI</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <header class="header">
+
+            <div>
+                <h1>CareerPilot AI</h1>
+
+                <p>
+                    Intelligent Career Prediction and Skill Gap Analysis
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- INPUT SECTION -->
+        <section class="card">
+
+            <h2>Career Assessment</h2>
+
+            <p class="description">
+                Enter your qualification, area of interest, and technical
+                skills to receive a career prediction and skill-gap analysis.
+            </p>
+
+
+            <!-- QUALIFICATION -->
+            <div class="form-group">
+
+                <label for="qualification">
+                    Qualification
+                </label>
+
+                <select id="qualification">
+
+                    <option value="">
+                        Select Qualification
+                    </option>
+
+                    <option value="B.E">
+                        B.E
+                    </option>
+
+                    <option value="B.Tech">
+                        B.Tech
+                    </option>
+
+                    <option value="BCA">
+                        BCA
+                    </option>
+
+                    <option value="B.Sc">
+                        B.Sc
+                    </option>
+
+                    <option value="MCA">
+                        MCA
+                    </option>
+
+                    <option value="M.Sc">
+                        M.Sc
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- INTEREST -->
+            <div class="form-group">
+
+                <label for="interest">
+                    Area of Interest
+                </label>
+
+                <select id="interest">
+
+                    <option value="">
+                        Select Area of Interest
+                    </option>
+
+                    <option value="AI">
+                        Artificial Intelligence
+                    </option>
+
+                    <option value="Data Science">
+                        Data Science
+                    </option>
+
+                    <option value="Web Development">
+                        Web Development
+                    </option>
+
+                    <option value="Software Development">
+                        Software Development
+                    </option>
+
+                    <option value="Cloud Computing">
+                        Cloud Computing
+                    </option>
+
+                    <option value="Networking">
+                        Networking
+                    </option>
+
+                    <option value="Cybersecurity">
+                        Cybersecurity
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SKILLS -->
+            <div class="form-group">
+
+                <label>
+                    Technical Skills
+                </label>
+
+                <div class="skills-grid">
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Python">
+                        Python
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Java">
+                        Java
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="SQL">
+                        SQL
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="HTML">
+                        HTML
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="CSS">
+                        CSS
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="JavaScript">
+                        JavaScript
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Pandas">
+                        Pandas
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="NumPy">
+                        NumPy
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Excel">
+                        Excel
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Data_Visualization">
+                        Data Visualization
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Machine_Learning">
+                        Machine Learning
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Scikit_Learn">
+                        Scikit-learn
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Git">
+                        Git
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Linux">
+                        Linux
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Cloud_Computing">
+                        Cloud Computing
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Networking">
+                        Networking
+                    </label>
+
+
+                    <label class="skill-item">
+                        <input type="checkbox" value="Cybersecurity">
+                        Cybersecurity
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- PREDICT BUTTON -->
+            <button
+                id="predictButton"
+                type="button"
+                onclick="predictCareer()">
+
+                Predict Career
+
+            </button>
+
+
+            <!-- ERROR MESSAGE -->
+            <div
+                id="errorMessage"
+                class="error-message"
+                style="display: none;">
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS SECTION -->
+        <section
+            id="resultsSection"
+            class="results-section"
+            style="display: none;">
+
+
+            <!-- CAREER -->
+            <div class="card career-card">
+
+                <h2>Recommended Career</h2>
+
+                <div
+                    id="careerResult"
+                    class="career-result">
+                </div>
+
+            </div>
+
+
+            <!-- SKILL GAP -->
+            <div class="card">
+
+                <h2>Skill Gap Analysis</h2>
+
+
+                <!-- REQUIRED -->
+                <div class="result-block">
+
+                    <h3>
+                        Required Skills
+                    </h3>
+
+                    <div
+                        id="requiredSkills"
+                        class="skills-list">
+                    </div>
+
+                </div>
+
+
+                <!-- MATCHED -->
+                <div class="result-block">
+
+                    <h3>
+                        Matched Skills
+                    </h3>
+
+                    <div
+                        id="matchedSkills"
+                        class="skills-list matched">
+                    </div>
+
+                </div>
+
+
+                <!-- MISSING -->
+                <div class="result-block">
+
+                    <h3>
+                        Missing Skills
+                    </h3>
+
+                    <div
+                        id="missingSkills"
+                        class="skills-list missing">
+                    </div>
+
+                </div>
+
+
+                <!-- GAP PERCENTAGE -->
+                <div class="gap-section">
+
+                    <div class="gap-header">
+
+                        <span>
+                            Skill Gap
+                        </span>
+
+                        <strong id="skillGapPercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="progress-container">
+
+                        <div
+                            id="skillGapProgress"
+                            class="progress-bar">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEARNING RECOMMENDATIONS -->
+            <div class="card">
+
+                <div class="recommendation-header">
+
+                    <div>
+
+                        <h2>
+                            Learning Recommendations
+                        </h2>
+
+                        <p>
+                            Next steps to improve your skills
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <ul
+                    id="learningRecommendations"
+                    class="recommendations-list">
+                </ul>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                CareerPilot AI |
+                Career Prediction and Skill Gap Analysis
+            </p>
+
+            <p class="synthetic-note">
+                Dataset used for this academic project is synthetic/demo data.
+            </p>
+
+        </footer>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        async function predictCareer() {
+
+            const qualification =
+                document.getElementById("qualification").value;
+
+            const interest =
+                document.getElementById("interest").value;
+
+            const checkboxes =
+                document.querySelectorAll(
+                    '.skill-item input[type="checkbox"]:checked'
+                );
+
+
+            const skills =
+                Array.from(checkboxes).map(
+                    checkbox => checkbox.value
+                );
+
+
+            const errorMessage =
+                document.getElementById("errorMessage");
+
+
+            const resultsSection =
+                document.getElementById("resultsSection");
+
+
+            const predictButton =
+                document.getElementById("predictButton");
+
+
+            // Clear previous error
+            errorMessage.style.display = "none";
+            errorMessage.textContent = "";
+
+
+            // Basic validation
+
+            if (!qualification) {
+
+                showError(
+                    "Please select your qualification."
+                );
+
+                return;
+            }
+
+
+            if (!interest) {
+
+                showError(
+                    "Please select your area of interest."
+                );
+
+                return;
+            }
+
+
+            if (skills.length === 0) {
+
+                showError(
+                    "Please select at least one technical skill."
+                );
+
+                return;
+            }
+
+
+            // Disable button while processing
+
+            predictButton.disabled = true;
+
+            predictButton.textContent =
+                "Analyzing...";
+
+
+            try {
+
+                // Send data to Flask
+
+                const response =
+                    await fetch(
+                        "/predict",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+
+                                qualification:
+                                    qualification,
+
+                                interest:
+                                    interest,
+
+                                skills:
+                                    skills
+
+                            })
+                        }
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                // Check Flask error
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        data.error ||
+                        "Prediction failed."
+                    );
+
+                }
+
+
+                // Display career
+
+                document.getElementById(
+                    "careerResult"
+                ).textContent =
+                    data.career;
+
+
+                // Display required skills
+
+                displaySkills(
+                    "requiredSkills",
+                    data.required_skills
+                );
+
+
+                // Display matched skills
+
+                displaySkills(
+                    "matchedSkills",
+                    data.matched_skills
+                );
+
+
+                // Display missing skills
+
+                displaySkills(
+                    "missingSkills",
+                    data.missing_skills
+                );
+
+
+                // Display skill gap percentage
+
+                const gap =
+                    Number(
+                        data.skill_gap_percentage
+                    );
+
+
+                document.getElementById(
+                    "skillGapPercentage"
+                ).textContent =
+                    gap + "%";
+
+
+                // Progress bar
+
+                document.getElementById(
+                    "skillGapProgress"
+                ).style.width =
+                    gap + "%";
+
+
+                /*
+                 * IMPORTANT:
+                 *
+                 * learning_recommendations is an
+                 * array of objects:
+                 *
+                 * [
+                 *   {
+                 *      skill: "SQL",
+                 *      recommendation: "Learn SQL..."
+                 *   }
+                 * ]
+                 *
+                 * We must display the properties
+                 * individually.
+                 */
+
+                displayRecommendations(
+                    data.learning_recommendations
+                );
+
+
+                // Show results
+
+                resultsSection.style.display =
+                    "block";
+
+
+                // Scroll to results
+
+                resultsSection.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+                    "Prediction error:",
+                    error
+                );
+
+
+                showError(
+                    error.message ||
+                    "Something went wrong while predicting the career."
+                );
+
+            }
+
+
+            finally {
+
+                predictButton.disabled =
+                    false;
+
+                predictButton.textContent =
+                    "Predict Career";
+
+            }
+
+        }
+
+
+        /*
+         * Display skill lists
+         */
+
+        function displaySkills(
+            elementId,
+            skills
+        ) {
+
+            const container =
+                document.getElementById(
+                    elementId
+                );
+
+
+            container.innerHTML = "";
+
+
+            if (
+                !skills ||
+                skills.length === 0
+            ) {
+
+                container.innerHTML =
+                    '<span class="empty-message">None</span>';
+
+                return;
+            }
+
+
+            skills.forEach(
+                skill => {
+
+                    const span =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    span.className =
+                        "skill-tag";
+
+
+                    span.textContent =
+                        formatSkillName(
+                            skill
+                        );
+
+
+                    container.appendChild(
+                        span
+                    );
+
+                }
+            );
+
+        }
+
+
+        /*
+         * Display learning recommendations
+         *
+         * This fixes the [object Object] problem.
+         */
+
+        function displayRecommendations(
+            recommendations
+        ) {
+
+            const container =
+                document.getElementById(
+                    "learningRecommendations"
+                );
+
+
+            container.innerHTML = "";
+
+
+            if (
+                !recommendations ||
+                recommendations.length === 0
+            ) {
+
+                container.innerHTML =
+                    `
+                    <li class="empty-recommendation">
+                        No additional recommendations.
+                    </li>
+                    `;
+
+                return;
+            }
+
+
+            recommendations.forEach(
+                item => {
+
+                    const li =
+                        document.createElement(
+                            "li"
+                        );
+
+
+                    li.className =
+                        "recommendation-item";
+
+
+                    /*
+                     * item is an object.
+                     *
+                     * Example:
+                     *
+                     * {
+                     *   skill: "SQL",
+                     *   recommendation:
+                     *      "Learn SQL queries..."
+                     * }
+                     */
+
+                    const skill =
+                        item.skill ||
+                        "Skill";
+
+
+                    const recommendation =
+                        item.recommendation ||
+                        "Continue learning this skill.";
+
+
+                    li.innerHTML = `
+
+                        <div class="recommendation-icon">
+                            →
+                        </div>
+
+                        <div class="recommendation-content">
+
+                            <strong>
+                                ${formatSkillName(skill)}
+                            </strong>
+
+                            <p>
+                                ${recommendation}
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+                    container.appendChild(
+                        li
+                    );
+
+                }
+            );
+
+        }
+
+
+        /*
+         * Convert internal skill names
+         * into readable names.
+         *
+         * Example:
+         *
+         * Machine_Learning
+         * becomes
+         * Machine Learning
+         */
+
+        function formatSkillName(
+            skill
+        ) {
+
+            if (!skill) {
+                return "";
+            }
+
+
+            return skill
+                .replaceAll("_", " ")
+                .replace(
+                    "Scikit Learn",
+                    "Scikit-learn"
+                );
+
+        }
+
+
+        /*
+         * Display error
+         */
+
+        function showError(
+            message
+        ) {
+
+            const errorMessage =
+                document.getElementById(
+                    "errorMessage"
+                );
+
+
+            errorMessage.textContent =
+                message;
+
+
+            errorMessage.style.display =
+                "block";
+
+
+            errorMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
